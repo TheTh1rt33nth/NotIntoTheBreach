@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     public BoardManager boardScript;
     private int map = 1;
-    public Camera camera;
+    
     private SpriteSelection prevselect;
     // Use this for initialization
     void Awake () {
@@ -22,34 +22,24 @@ public class GameManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-       
-        prevselect.DeSelect();
+       if(prevselect)
+        prevselect.SpriteDeSelect();
         RaycastHit hit;
         int x, y;
         x = 0;
         y = 0;
-        Ray ray;
-        ray = camera.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction, Color.red, 1f);
+        Ray ray= Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hitInformation = Physics2D.GetRayIntersection(ray, 10);
+        SpriteSelection select=null; 
         
-        if (Physics.Raycast(ray, out hit))
+        if (hitInformation)
         {
-            Debug.Log("That Shit is working");
-            Transform objectHit = hit.transform;
-            Debug.Log(x + " " + y);
-            x = (int)objectHit.transform.position.x;
-            y = (int)objectHit.transform.position.y;
-            Debug.Log(x + " " + y);
+            x = System.Convert.ToInt32(hitInformation.transform.position.x);
+            y = System.Convert.ToInt32(hitInformation.transform.position.y);
+            select = boardScript.CurrentMapTiled[x][y].prefab.GetComponent<SpriteSelection>();
+            select.SpriteSelect();
         }
-        
-        else
-        {
-            
-           
-            Debug.Log("Drawn");
-        }
-        SpriteSelection select = boardScript.CurrentMapTiled[x][y].prefab.GetComponent<SpriteSelection>();
-        select.SpriteSelect();
+       
         prevselect = select;
         
     }
