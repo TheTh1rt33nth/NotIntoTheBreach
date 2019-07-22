@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61581651819651952}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!95 &95689860472761626
 Animator:
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Outliner: {fileID: 1695419008670970, guid: 212d963d0bba4054c82d278c18b8547e, type: 2}
+  OutlinerExample: {fileID: 0}
 --- !u!212 &212703445657692556
 SpriteRenderer:
   m_ObjectHideFlags: 1

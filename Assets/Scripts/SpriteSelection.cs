@@ -5,17 +5,15 @@ using UnityEngine;
 public class SpriteSelection : MonoBehaviour {
     private SpriteRenderer sprite;
     public GameObject Outliner;
-    private GameObject OutlinerExample;
+    public GameObject OutlinerExample;
     private SpriteRenderer OutlinerSprite;
     Transform trans;
 
 
     void Start () {
         sprite = gameObject.GetComponent<SpriteRenderer>();
-        
         OutlinerSprite=Outliner.GetComponent<SpriteRenderer>();
         OutlinerExample = Instantiate(Outliner, gameObject.transform);
-        
         OutlinerExample.SetActive(false);
     }
 	public void Select()

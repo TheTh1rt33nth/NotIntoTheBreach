@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61545226964823990}
   m_Layer: 0
   m_Name: Forest_Clear
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Outliner: {fileID: 1695419008670970, guid: 212d963d0bba4054c82d278c18b8547e, type: 2}
+  OutlinerExample: {fileID: 0}
 --- !u!212 &212813174851969824
 SpriteRenderer:
   m_ObjectHideFlags: 1

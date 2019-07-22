@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61029470950559806}
   m_Layer: 0
   m_Name: Grass
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Outliner: {fileID: 1695419008670970, guid: 212d963d0bba4054c82d278c18b8547e, type: 2}
+  OutlinerExample: {fileID: 0}
 --- !u!212 &212684042673749868
 SpriteRenderer:
   m_ObjectHideFlags: 1

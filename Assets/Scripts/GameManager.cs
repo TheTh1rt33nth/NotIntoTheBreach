@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour {
     void Awake () {
         boardScript = GetComponent<BoardManager>();
         InitGame();
-       
-        
-
     }
 	void InitGame()
     {
@@ -36,8 +33,11 @@ public class GameManager : MonoBehaviour {
         {
             x = System.Convert.ToInt32(hitInformation.transform.position.x);
             y = System.Convert.ToInt32(hitInformation.transform.position.y);
-            select = boardScript.CurrentMapTiled[x][y].prefab.GetComponent<SpriteSelection>();
-            select.SpriteSelect();
+            if (hitInformation.transform.tag == "Tile")
+            {
+                select = boardScript.CurrentMapTiled[x][y].prefab.GetComponent<SpriteSelection>();
+                select.SpriteSelect();
+            }
         }
        
         prevselect = select;
